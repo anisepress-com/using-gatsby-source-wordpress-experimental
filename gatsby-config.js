@@ -20,6 +20,12 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
+        auth: {
+          htaccess: {
+            username: process.env.HTTPBASICAUTH_USERNAME,
+            password: process.env.HTTPBASICAUTH_PASSWORD,
+          }
+        },
         url:
           process.env.WPGRAPHQL_URL ||
           `https://dev-gatsby-source-wordpress-v4.pantheonsite.io/graphql`,
